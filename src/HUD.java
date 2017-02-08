@@ -4,16 +4,16 @@ public class HUD {
 
     public static int HEALTH = 100;
 
-    private  int greenValue = 220;
+    private int greenValue = 220;
 
     private int score = 0;
     private int level = 1;
 
     public void tick(){
 
-        HEALTH = Game.clamp(HEALTH,0,100);
+        HEALTH = (int)Game.clamp(HEALTH,0,100);
 
-        greenValue = Game.clamp(greenValue,0,255);
+        greenValue = (int)Game.clamp(greenValue,0,255);
 
         greenValue = HEALTH*2+5;
 
