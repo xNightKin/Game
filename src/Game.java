@@ -5,7 +5,6 @@ import java.util.Random;
 public class Game extends Canvas implements Runnable{
 
     private static final long serialVersionUID = -1442798787354930462L;
-   // private static int numb;
 
     public static final int WIDTH = 640, HEIGHT = WIDTH/12*9;
 
