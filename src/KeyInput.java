@@ -6,9 +6,11 @@ public class KeyInput extends KeyAdapter {
     private Handler handler;
     private boolean[] keyDown = new boolean[4];
 
-    public KeyInput(Handler handler){
-        this.handler = handler;
+    Game game;
 
+    public KeyInput(Handler handler, Game game){
+        this.handler = handler;
+        this.game = game;
         keyDown[0]= false;
         keyDown[1]= false;
         keyDown[2]= false;
@@ -30,10 +32,17 @@ public class KeyInput extends KeyAdapter {
 
             }
         }
+        if (key == KeyEvent.VK_P) {
 
-        if(key == KeyEvent.VK_ESCAPE) System.exit(1);
-
+            if (Game.gameState == Game.STATE.Game) {
+                if (Game.paused) Game.paused = false;
+                else Game.paused = true;
+            }
+        }
+            if (key == KeyEvent.VK_ESCAPE) System.exit(1);
     }
+
+
 
     public void keyReleased(KeyEvent e) {
 
